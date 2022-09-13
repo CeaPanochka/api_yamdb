@@ -67,6 +67,10 @@ class User(AbstractUser):
         'Модератор',
         default=False,
     )
+    is_admin = models.BooleanField(
+        'Админ',
+        default=False,
+    )
     confirmation_code = models.CharField(
         'Код подтверждения',
         max_length=10

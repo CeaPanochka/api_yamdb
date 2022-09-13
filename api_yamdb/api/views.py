@@ -1,6 +1,7 @@
 import email
 from email import message
 from random import randint
+from urllib import request
 
 from django.core.mail import send_mail
 from django.db.models import Avg
@@ -21,7 +22,7 @@ from reviews.models import Category, Genre, Review, Title
 from users.models import User
 
 from .permissions import (IsAdminModeratorOwnerOrReadOnly, IsAdminOrReadOnly,
-                          IsAuthorOrAdminPermission)
+                          IsAuthorOrAdminPermission, AdminOnly)
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, ReviewSerializer,
                           TitleReadSerializer, TitleWriteSerializer,
@@ -71,33 +72,49 @@ class UserRegistration(APIView):
     
     def post(self, serializer):
         user = self.request.data
-
-        serializer = self.serializer_class(data=user)
-        serializer.is_valid(raise_exception=True)
         confirmation_code = get_confirmation_code()
 
-        serializer.save(confirmation_code=confirmation_code,)
+        try:
+            user = get_object_or_404(User, username=user['username'])
 
-        send_mail(
-            'Confirmation code',
-            confirmation_code,
-            'test@test.com',
-            [serializer.validated_data['email'], ]
-        )
+            data = {
+                'email': user.email,
+                'username': user.username
+            }
+            send_mail(
+                'Confirmation code',
+                confirmation_code,
+                'test@test.com',
+                [user.email, ]
+            )
 
-        data = {
-            'email': serializer.validated_data['email'],
-            'username': serializer.validated_data['username']
-        }
+            return Response(data, status=status.HTTP_200_OK)
+        except:
+            serializer = self.serializer_class(data=user)
+            serializer.is_valid(raise_exception=True)
 
-        return Response(data, status=status.HTTP_200_OK)
+            serializer.save(confirmation_code=confirmation_code,)
+
+            data = {
+                'email': serializer.validated_data['email'],
+                'username': serializer.validated_data['username']
+            }
+
+            send_mail(
+                'Confirmation code',
+                confirmation_code,
+                'test@test.com',
+                [serializer.validated_data['email'], ]
+            )
+
+            return Response(data, status=status.HTTP_200_OK)
 
 
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegistrationSerializer
     pagination_class = PageNumberPagination
-    permission_classes = (IsAdminUser,)
+    permission_classes = (AdminOnly,)
     filter_backends = (SearchFilter,)
     search_filters = ('username',)
 
@@ -107,6 +124,7 @@ class UserList(generics.ListCreateAPIView):
                 serializer.save(is_moderator=True)
             elif self.request.data['role'] == 'admin':
                 serializer.save(is_staff=True)
+        serializer.save()
 
     def perform_update(self, serializer):
         if 'role' in self.request.data:
@@ -114,6 +132,7 @@ class UserList(generics.ListCreateAPIView):
                 serializer.save(is_moderator=True)
             elif self.request.data['role'] == 'admin':
                 serializer.save(is_staff=True)
+        serializer.save()
 
 
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):

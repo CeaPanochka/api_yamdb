@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import include, path, re_path
 from rest_framework.routers import SimpleRouter
 
 from .views import (CategoryViewSet, CommentViewSet, GenreViewSet,
@@ -27,7 +27,7 @@ urlpatterns = [
     path('v1/auth/token/', TokenObtainPairConfirmEmailView.as_view(),
          name='get_token'),
     path('v1/users/', UserList.as_view(), name='users_list'),
-    path(r'users/(?P<username>[\w.@+-]+)' , UserDetail.as_view(), name='users_detail'),
+    re_path(r'users/(?P<username>[\w.@+-]+)', UserDetail.as_view(), name='users_detail'),
     path('v1/users/me/', UserDetail.as_view(), name='users_me'),
     path('v1/', include(v1_router.urls)),
 ]

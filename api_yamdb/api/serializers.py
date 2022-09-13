@@ -108,14 +108,12 @@ class RegistrationSerializer(serializers.ModelSerializer):
         default=''
     )
     confirmation_code = serializers.CharField(write_only=True, default='')
-    role = serializers.ChoiceField(choices=CHOICES, default='user', write_only=True)
-
-    token = serializers.CharField(max_length=255, read_only=True)
+    role = serializers.ChoiceField(choices=CHOICES, default='user')
 
     class Meta:
         model = User
         fields = ['email', 'username', 'password',
-                  'token', 'confirmation_code', 'bio',
+                  'confirmation_code', 'bio',
                   'first_name', 'last_name', 'role']
 
     def create(self, validated_data):
