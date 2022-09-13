@@ -1,0 +1,2360 @@
+============================= test session starts =============================
+platform win32 -- Python 3.7.0, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- e:\dev\s_10_project\venv\scripts\python.exe
+django: settings: api_yamdb.settings (from ini)
+rootdir: E:\Dev\s_10_project\api_yamdb, configfile: pytest.ini, testpaths: tests/
+plugins: django-4.4.0, pythonpath-0.7.3
+collecting ... collected 53 items
+
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_nodata_signup FAILED [  1%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup PASSED [  3%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_user_signup FAILED [  5%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user FAILED [  7%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data FAILED [  9%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted FAILED [ 11%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_same_email_restricted FAILED [ 13%]
+tests/test_01_users.py::Test01UserAPI::test_01_users_not_authenticated FAILED [ 15%]
+tests/test_01_users.py::Test01UserAPI::test_02_users_username_not_authenticated FAILED [ 16%]
+tests/test_01_users.py::Test01UserAPI::test_03_users_me_not_authenticated FAILED [ 18%]
+tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin FAILED    [ 20%]
+tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search FAILED [ 22%]
+tests/test_01_users.py::Test01UserAPI::test_04_01_users_get_admin_only FAILED [ 24%]
+tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin FAILED [ 26%]
+tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser FAILED [ 28%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin FAILED [ 30%]
+tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_not_admin FAILED [ 32%]
+tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin FAILED [ 33%]
+tests/test_01_users.py::Test01UserAPI::test_07_02_users_username_patch_moderator FAILED [ 35%]
+tests/test_01_users.py::Test01UserAPI::test_07_03_users_username_patch_user FAILED [ 37%]
+tests/test_01_users.py::Test01UserAPI::test_07_05_users_username_put_user_restricted FAILED [ 39%]
+tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin FAILED [ 41%]
+tests/test_01_users.py::Test01UserAPI::test_08_02_users_username_delete_moderator FAILED [ 43%]
+tests/test_01_users.py::Test01UserAPI::test_08_03_users_username_delete_user FAILED [ 45%]
+tests/test_01_users.py::Test01UserAPI::test_08_04_users_username_delete_superuser FAILED [ 47%]
+tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions FAILED [ 49%]
+tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin FAILED [ 50%]
+tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin FAILED [ 52%]
+tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user FAILED [ 54%]
+tests/test_02_category.py::Test02CategoryAPI::test_01_category_not_auth PASSED [ 56%]
+tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin PASSED [ 58%]
+tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin FAILED [ 60%]
+tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin FAILED [ 62%]
+tests/test_02_category.py::Test02CategoryAPI::test_05_category_create_user FAILED [ 64%]
+tests/test_02_category.py::Test02CategoryAPI::test_06_category_create_moderator FAILED [ 66%]
+tests/test_03_genre.py::Test03GenreAPI::test_01_genre_not_auth PASSED    [ 67%]
+tests/test_03_genre.py::Test03GenreAPI::test_02_genre PASSED             [ 69%]
+tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete FAILED     [ 71%]
+tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission FAILED [ 73%]
+tests/test_03_genre.py::Test03GenreAPI::test_05_genre_create_user FAILED [ 75%]
+tests/test_03_genre.py::Test03GenreAPI::test_06_genre_create_moderator FAILED [ 77%]
+tests/test_04_title.py::Test04TitleAPI::test_01_title_not_auth PASSED    [ 79%]
+tests/test_04_title.py::Test04TitleAPI::test_02_title_admin FAILED       [ 81%]
+tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail FAILED     [ 83%]
+tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission FAILED [ 84%]
+tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth FAILED [ 86%]
+tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin FAILED    [ 88%]
+tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail FAILED   [ 90%]
+tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission FAILED [ 92%]
+tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth FAILED [ 94%]
+tests/test_06_comment.py::Test06CommentAPI::test_02_comment FAILED       [ 96%]
+tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail FAILED [ 98%]
+tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission FAILED [100%]
+
+================================== FAILURES ===================================
+________________ Test00UserRegistration.test_00_nodata_signup _________________
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x04E0EC30>
+client = <django.test.client.Client object at 0x04F75850>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_nodata_signup(self, client):
+        request_type = 'POST'
+        response = client.post(self.url_signup)
+    
+        assert response.status_code != 404, (
+            f'Страница `{self.url_signup}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+        code = 400
+        assert response.status_code == code, (
+            f'Проверьте, что при {request_type} запросе `{self.url_signup}` без параметров '
+            f'не создается пользователь и возвращается статус {code}'
+        )
+        response_json = response.json()
+        empty_fields = ['email', 'username']
+        for field in empty_fields:
+>           assert (field in response_json.keys()
+                    and isinstance(response_json[field], list)), (
+                f'Проверьте, что при {request_type} запросе `{self.url_signup}` без параметров '
+                f'в ответе есть сообщение о том, какие поля заполенены неправильно'
+            )
+E           AssertionError: Проверьте, что при POST запросе `/api/v1/auth/signup/` без параметров в ответе есть сообщение о том, какие поля заполенены неправильно
+E           assert ('email' in dict_keys(['username']))
+E            +  where dict_keys(['username']) = <built-in method keys of dict object at 0x04F8B5D0>()
+E            +    where <built-in method keys of dict object at 0x04F8B5D0> = {'username': ['This field is required.']}.keys
+
+tests\test_00_user_registration.py:29: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+Operations to perform:
+  Synchronize unmigrated apps: django_filters, messages, staticfiles
+  Apply all migrations: admin, auth, contenttypes, reviews, sessions, users
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying users.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying reviews.0001_add_models... OK
+  Applying reviews.0002_auto_20220910_1503... OK
+  Applying sessions.0001_initial... OK
+  Applying users.0002_auto_20220910_1503... OK
+  Applying users.0003_auto_20220910_1614... OK
+  Applying users.0004_auto_20220910_1618... OK
+  Applying users.0005_user_confirmation_code... OK
+  Applying users.0006_auto_20220912_1603... OK
+---------------------------- Captured stderr setup ----------------------------
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Bad Request: /api/v1/auth/signup/
+____________ Test00UserRegistration.test_00_valid_data_user_signup ____________
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x04F756D0>
+client = <django.test.client.Client object at 0x05337CD0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_valid_data_user_signup(self, client):
+    
+        valid_email = 'valid@yamdb.fake'
+        valid_username = 'valid_username'
+        outbox_before_count = len(mail.outbox)
+    
+        valid_data = {
+            'email': valid_email,
+            'username': valid_username
+        }
+        request_type = 'POST'
+>       response = client.post(self.url_signup, data=valid_data)
+
+tests\test_00_user_registration.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\venv\lib\site-packages\django\test\client.py:543: in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:357: in post
+    secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\django\views\generic\base.py:71: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:511: in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <api.views.UserRegistration object at 0x0534F2D0>
+request = <rest_framework.request.Request: POST '/api/v1/auth/signup/'>
+response = None, args = (), kwargs = {}
+
+    def finalize_response(self, request, response, *args, **kwargs):
+        """
+        Returns the final response object.
+        """
+        # Make the error obvious if a proper response is not returned
+        assert isinstance(response, HttpResponseBase), (
+            'Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` '
+            'to be returned from the view, but received a `%s`'
+>           % type(response)
+        )
+E       AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+
+..\venv\lib\site-packages\rest_framework\views.py:426: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'email': 'valid@yamdb.fake', 'username': 'valid_username', 'password': '', 'confirmation_code': '2w9paS', 'role': 'user'}
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/auth/signup/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+_________ Test00UserRegistration.test_00_valid_data_admin_create_user _________
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x05359B30>
+admin_client = <rest_framework.test.APIClient object at 0x053242F0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_valid_data_admin_create_user(self, admin_client):
+    
+        valid_email = 'valid@yamdb.fake'
+        valid_username = 'valid_username'
+        outbox_before_count = len(mail.outbox)
+    
+        valid_data = {
+            'email': valid_email,
+            'username': valid_username
+        }
+        request_type = 'POST'
+        response = admin_client.post(self.url_admin_create_user, data=valid_data)
+        outbox_after = mail.outbox
+    
+>       assert response.status_code != 404, (
+            f'Страница `{self.url_admin_create_user}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_00_user_registration.py:137: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+________ Test00UserRegistration.test_00_obtain_jwt_token_invalid_data _________
+
+self = <QueryDict: {}>, key = 'username'
+
+    def __getitem__(self, key):
+        """
+        Return the last data value for this key, or [] if it's an empty list;
+        raise KeyError if not found.
+        """
+        try:
+>           list_ = super().__getitem__(key)
+E           KeyError: 'username'
+
+..\venv\lib\site-packages\django\utils\datastructures.py:78: KeyError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x05660810>
+client = <django.test.client.Client object at 0x055AD050>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_obtain_jwt_token_invalid_data(self, client):
+    
+        request_type = 'POST'
+>       response = client.post(self.url_token)
+
+tests\test_00_user_registration.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\venv\lib\site-packages\django\test\client.py:543: in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:357: in post
+    secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\django\views\generic\base.py:71: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+api_yamdb\api\views.py:47: in post
+    user = get_object_or_404(User, username=request.data['username'])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QueryDict: {}>, key = 'username'
+
+    def __getitem__(self, key):
+        """
+        Return the last data value for this key, or [] if it's an empty list;
+        raise KeyError if not found.
+        """
+        try:
+            list_ = super().__getitem__(key)
+        except KeyError:
+>           raise MultiValueDictKeyError(key)
+E           django.utils.datastructures.MultiValueDictKeyError: 'username'
+
+..\venv\lib\site-packages\django\utils\datastructures.py:80: MultiValueDictKeyError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/auth/token/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Dev\s_10_project\api_yamdb\api_yamdb\api\views.py", line 47, in post
+    user = get_object_or_404(User, username=request.data['username'])
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\utils\datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+_____ Test00UserRegistration.test_00_registration_me_username_restricted ______
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x050A9D70>
+client = <django.test.client.Client object at 0x050BCD30>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_registration_me_username_restricted(self, client):
+        valid_email = 'valid@yamdb.fake'
+        invalid_username = 'me'
+        request_type = 'POST'
+    
+        valid_data = {
+            'email': valid_email,
+            'username': invalid_username
+        }
+>       response = client.post(self.url_signup, data=valid_data)
+
+tests\test_00_user_registration.py:237: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\venv\lib\site-packages\django\test\client.py:543: in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:357: in post
+    secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\django\views\generic\base.py:71: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:511: in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <api.views.UserRegistration object at 0x050B00B0>
+request = <rest_framework.request.Request: POST '/api/v1/auth/signup/'>
+response = None, args = (), kwargs = {}
+
+    def finalize_response(self, request, response, *args, **kwargs):
+        """
+        Returns the final response object.
+        """
+        # Make the error obvious if a proper response is not returned
+        assert isinstance(response, HttpResponseBase), (
+            'Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` '
+            'to be returned from the view, but received a `%s`'
+>           % type(response)
+        )
+E       AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+
+..\venv\lib\site-packages\rest_framework\views.py:426: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'email': 'valid@yamdb.fake', 'username': 'me', 'password': '', 'confirmation_code': '1o9x5h', 'role': 'user'}
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/auth/signup/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+______ Test00UserRegistration.test_00_registration_same_email_restricted ______
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x050BC970>
+client = <django.test.client.Client object at 0x04F23290>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_registration_same_email_restricted(self, client):
+        valid_email_1 = 'test_duplicate_1@yamdb.fake'
+        valid_email_2 = 'test_duplicate_2@yamdb.fake'
+        valid_username_1 = 'valid_username_1'
+        valid_username_2 = 'valid_username_2'
+        request_type = 'POST'
+    
+        valid_data = {
+            'email': valid_email_1,
+            'username': valid_username_1
+        }
+>       response = client.post(self.url_signup, data=valid_data)
+
+tests\test_00_user_registration.py:256: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\venv\lib\site-packages\django\test\client.py:543: in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:357: in post
+    secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\django\views\generic\base.py:71: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:511: in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <api.views.UserRegistration object at 0x050863F0>
+request = <rest_framework.request.Request: POST '/api/v1/auth/signup/'>
+response = None, args = (), kwargs = {}
+
+    def finalize_response(self, request, response, *args, **kwargs):
+        """
+        Returns the final response object.
+        """
+        # Make the error obvious if a proper response is not returned
+        assert isinstance(response, HttpResponseBase), (
+            'Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` '
+            'to be returned from the view, but received a `%s`'
+>           % type(response)
+        )
+E       AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+
+..\venv\lib\site-packages\rest_framework\views.py:426: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'email': 'test_duplicate_1@yamdb.fake', 'username': 'valid_username_1', 'password': '', 'confirmation_code': '2xcBtm', 'role': 'user'}
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/auth/signup/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 426, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+________________ Test01UserAPI.test_01_users_not_authenticated ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0534F310>
+client = <django.test.client.Client object at 0x04EDA0D0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_users_not_authenticated(self, client):
+        response = client.get('/api/v1/users/')
+    
+>       assert response.status_code != 404, (
+            'Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:13: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+___________ Test01UserAPI.test_02_users_username_not_authenticated ____________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04EDA8F0>
+client = <django.test.client.Client object at 0x04FD7B90>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_users_username_not_authenticated(self, client, admin):
+        response = client.get(f'/api/v1/users/{admin.username}/')
+    
+>       assert response.status_code != 404, (
+            'Страница `/api/v1/users/{username}/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/{username}/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:25: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestAdmin/
+______________ Test01UserAPI.test_03_users_me_not_authenticated _______________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0541F930>
+client = <django.test.client.Client object at 0x055ADC10>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_users_me_not_authenticated(self, client):
+        response = client.get('/api/v1/users/me/')
+    
+>       assert response.status_code != 404, (
+            'Страница `/api/v1/users/me/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/me/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:37: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/me/
+____________________ Test01UserAPI.test_04_users_get_admin ____________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0554F0D0>
+admin_client = <rest_framework.test.APIClient object at 0x04FE4F30>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_users_get_admin(self, admin_client, admin):
+        response = admin_client.get('/api/v1/users/')
+>       assert response.status_code != 404, (
+            'Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:48: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+__________________ Test01UserAPI.test_04_02_users_get_search __________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x056A1110>
+admin_client = <rest_framework.test.APIClient object at 0x050DCA30>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_02_users_get_search(self, admin_client, admin):
+        url = '/api/v1/users/'
+        search_url = f'{url}?search={admin.username}'
+        response = admin_client.get(search_url)
+>       assert response.status_code != 404, (
+            'Страница `/api/v1/users/?search={username}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/?search={username}` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:93: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+________________ Test01UserAPI.test_04_01_users_get_admin_only ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x050DCD90>
+user_client = <rest_framework.test.APIClient object at 0x05359AF0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_01_users_get_admin_only(self, user_client):
+        url = '/api/v1/users/'
+        response = user_client.get(url)
+>       assert response.status_code != 404, (
+            f'Страница `{url}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:123: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+__________________ Test01UserAPI.test_05_01_users_post_admin __________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x055C9050>
+admin_client = <rest_framework.test.APIClient object at 0x053385F0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_05_01_users_post_admin(self, admin_client, admin):
+        empty_data = {}
+        response = admin_client.post('/api/v1/users/', data=empty_data)
+>       assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/users/` с пустыми данными возвращаетe 400'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` с пустыми данными возвращаетe 400
+E       assert 404 == 400
+E         +404
+E         -400
+
+tests\test_01_users.py:135: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+_____________ Test01UserAPI.test_05_02_users_post_user_superuser ______________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x053389B0>
+user_superuser_client = <rest_framework.test.APIClient object at 0x0508ECF0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_05_02_users_post_user_superuser(self, user_superuser_client):
+        users = get_user_model().objects.all()
+        users_before = users.count()
+        valid_data = {
+            'username': 'TestUser_3',
+            'role': 'user',
+            'email': 'testuser3@yamdb.fake'
+        }
+        response = user_superuser_client.post('/api/v1/users/', data=valid_data)
+>       assert response.status_code == 201, (
+            'Проверьте, что при POST запросе `/api/v1/users/` от суперпользователя, '
+            'с правильными данными, возвращаете статус 201.'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/users/` от суперпользователя, с правильными данными, возвращаете статус 201.
+E       assert 404 == 201
+E         +404
+E         -201
+
+tests\test_01_users.py:260: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+_______________ Test01UserAPI.test_06_users_username_get_admin ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0508E490>
+admin_client = <rest_framework.test.APIClient object at 0x04EB6B10>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_06_users_username_get_admin(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:272: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+..\venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+            raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+>               self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+..\venv\lib\site-packages\django\db\models\query.py:408: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+_____________ Test01UserAPI.test_06_users_username_get_not_admin ______________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04EB6DB0>
+moderator_client = <rest_framework.test.APIClient object at 0x05359310>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_06_users_username_get_not_admin(self, moderator_client, admin):
+        response = moderator_client.get(f'/api/v1/users/{admin.username}/')
+>       assert response.status_code != 404, (
+            'Страница `/api/v1/users/{username}/` не найдена, проверьте этот адрес в *urls.py*'
+        )
+E       AssertionError: Страница `/api/v1/users/{username}/` не найдена, проверьте этот адрес в *urls.py*
+E       assert 404 != 404
+E        +  where 404 = <HttpResponseNotFound status_code=404, "text/html">.status_code
+
+tests\test_01_users.py:315: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestAdmin/
+_____________ Test01UserAPI.test_07_01_users_username_patch_admin _____________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x050F6350>
+admin_client = <rest_framework.test.APIClient object at 0x04EDAE10>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_07_01_users_username_patch_admin(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:326: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+..\venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+            raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+>               self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+..\venv\lib\site-packages\django\db\models\query.py:408: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+___________ Test01UserAPI.test_07_02_users_username_patch_moderator ___________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04FC03D0>
+moderator_client = <rest_framework.test.APIClient object at 0x0567D810>
+user = <User: TestUser>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_07_02_users_username_patch_moderator(self, moderator_client, user):
+        data = {
+            'first_name': 'New USer Firstname',
+            'last_name': 'New USer Lastname',
+            'bio': 'new user bio'
+        }
+        response = moderator_client.patch(f'/api/v1/users/{user.username}/', data=data)
+>       assert response.status_code == 403, (
+            'Проверьте, что при PATCH запросе `/api/v1/users/{username}/` '
+            'пользователь с ролью moderator не может изменять данные других пользователей'
+        )
+E       AssertionError: Проверьте, что при PATCH запросе `/api/v1/users/{username}/` пользователь с ролью moderator не может изменять данные других пользователей
+E       assert 404 == 403
+E         +404
+E         -403
+
+tests\test_01_users.py:364: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestUser/
+_____________ Test01UserAPI.test_07_03_users_username_patch_user ______________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x055C9990>
+user_client = <rest_framework.test.APIClient object at 0x05660CF0>
+user = <User: TestUser>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_07_03_users_username_patch_user(self, user_client, user):
+        data = {
+            'first_name': 'New USer Firstname',
+            'last_name': 'New USer Lastname',
+            'bio': 'new user bio'
+        }
+        response = user_client.patch(f'/api/v1/users/{user.username}/', data=data)
+>       assert response.status_code == 403, (
+            'Проверьте, что при PATCH запросе `/api/v1/users/{username}/` '
+            'пользователь с ролью user не может изменять данные других пользователей'
+        )
+E       AssertionError: Проверьте, что при PATCH запросе `/api/v1/users/{username}/` пользователь с ролью user не может изменять данные других пользователей
+E       assert 404 == 403
+E         +404
+E         -403
+
+tests\test_01_users.py:377: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestUser/
+_________ Test01UserAPI.test_07_05_users_username_put_user_restricted _________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x0569EEF0>
+user_client = <rest_framework.test.APIClient object at 0x0569E4D0>
+user = <User: TestUser>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_07_05_users_username_put_user_restricted(self, user_client, user):
+        data = {
+            'first_name': 'New USer Firstname',
+            'last_name': 'New USer Lastname',
+            'bio': 'new user bio'
+        }
+        response = user_client.put(f'/api/v1/users/{user.username}/', data=data)
+        code = 403
+>       assert response.status_code == code, (
+            'Проверьте, что PUT запрос на `/api/v1/users/{username}/` '
+            f'не доступен и возвращается статус {code}'
+        )
+E       AssertionError: Проверьте, что PUT запрос на `/api/v1/users/{username}/` не доступен и возвращается статус 403
+E       assert 404 == 403
+E         +404
+E         -403
+
+tests\test_01_users.py:391: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestUser/
+____________ Test01UserAPI.test_08_01_users_username_delete_admin _____________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04FFFC30>
+admin_client = <rest_framework.test.APIClient object at 0x04FFF0F0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_08_01_users_username_delete_admin(self, admin_client):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:398: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+..\venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+            raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+>               self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+..\venv\lib\site-packages\django\db\models\query.py:408: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+__________ Test01UserAPI.test_08_02_users_username_delete_moderator ___________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04FFF090>
+moderator_client = <rest_framework.test.APIClient object at 0x050E4570>
+user = <User: TestUser>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_08_02_users_username_delete_moderator(self, moderator_client, user):
+        users_before = get_user_model().objects.count()
+        response = moderator_client.delete(f'/api/v1/users/{user.username}/')
+>       assert response.status_code == 403, (
+            'Проверьте, что при DELETE запросе `/api/v1/users/{username}/`'
+            'не от админа, возвращаете статус 403'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/users/{username}/`не от админа, возвращаете статус 403
+E       assert 404 == 403
+E         +404
+E         -403
+
+tests\test_01_users.py:411: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestUser/
+_____________ Test01UserAPI.test_08_03_users_username_delete_user _____________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04E4E0F0>
+user_client = <rest_framework.test.APIClient object at 0x0512F450>
+user = <User: TestUser>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_08_03_users_username_delete_user(self, user_client, user):
+        users_before = get_user_model().objects.count()
+        response = user_client.delete(f'/api/v1/users/{user.username}/')
+>       assert response.status_code == 403, (
+            'Проверьте, что при DELETE запросе `/api/v1/users/{username}/` '
+            'не от админа, возвращаете статус 403'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/users/{username}/` не от админа, возвращаете статус 403
+E       assert 404 == 403
+E         +404
+E         -403
+
+tests\test_01_users.py:424: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestUser/
+__________ Test01UserAPI.test_08_04_users_username_delete_superuser ___________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04F238D0>
+user_superuser_client = <rest_framework.test.APIClient object at 0x05030D10>
+user = <User: TestUser>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_08_04_users_username_delete_superuser(self, user_superuser_client, user):
+        users_before = get_user_model().objects.count()
+        response = user_superuser_client.delete(f'/api/v1/users/{user.username}/')
+        code = 204
+>       assert response.status_code == code, (
+            'Проверьте, что при DELETE запросе `/api/v1/users/{username}/` '
+            f'от суперпользователя, возвращаете статус {code}'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/users/{username}/` от суперпользователя, возвращаете статус 204
+E       assert 404 == 204
+E         +404
+E         -204
+
+tests\test_01_users.py:438: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/TestUser/
+________________ Test01UserAPI.test_09_users_check_permissions ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x050D3290>
+admin_client = <rest_framework.test.APIClient object at 0x04FFF7B0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_09_users_check_permissions(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:488: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+..\venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+            raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+>               self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+..\venv\lib\site-packages\django\db\models\query.py:408: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+__________________ Test01UserAPI.test_10_users_me_get_admin ___________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x05677050>
+admin_client = <rest_framework.test.APIClient object at 0x0541FCD0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_10_users_me_get_admin(self, admin_client, admin):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:494: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+..\venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+            raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+>               self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+..\venv\lib\site-packages\django\db\models\query.py:408: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+________________ Test01UserAPI.test_11_01_users_me_patch_admin ________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x050C8730>
+admin_client = <rest_framework.test.APIClient object at 0x04FF1D50>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_11_01_users_me_patch_admin(self, admin_client):
+>       user, moderator = create_users_api(admin_client)
+
+tests\test_01_users.py:528: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:13: in create_users_api
+    user = get_user_model().objects.get(username=data['username'])
+..\venv\lib\site-packages\django\db\models\manager.py:82: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QuerySet [<User: TestAdmin>]>, args = ()
+kwargs = {'username': 'TestUser'}, clone = <QuerySet []>, num = 0
+
+    def get(self, *args, **kwargs):
+        """
+        Perform the query and return a single object matching the given
+        keyword arguments.
+        """
+        clone = self.filter(*args, **kwargs)
+        if self.query.can_filter() and not self.query.distinct_fields:
+            clone = clone.order_by()
+        num = len(clone)
+        if num == 1:
+            return clone._result_cache[0]
+        if not num:
+            raise self.model.DoesNotExist(
+                "%s matching query does not exist." %
+>               self.model._meta.object_name
+            )
+E           users.models.User.DoesNotExist: User matching query does not exist.
+
+..\venv\lib\site-packages\django\db\models\query.py:408: DoesNotExist
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/
+________________ Test01UserAPI.test_11_02_users_me_patch_user _________________
+
+self = <tests.test_01_users.Test01UserAPI object at 0x04FA7F30>
+user_client = <rest_framework.test.APIClient object at 0x04F3B810>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_11_02_users_me_patch_user(self, user_client):
+        data = {
+            'first_name': 'New user first name',
+            'last_name': 'New user last name',
+            'bio': 'new user bio',
+        }
+        response = user_client.patch('/api/v1/users/me/', data=data)
+>       assert response.status_code == 200, (
+            'Проверьте, что при PATCH запросе `/api/v1/users/me/`, '
+            'пользователь с ролью user может изменить свои данные, и возвращается статус 200'
+        )
+E       AssertionError: Проверьте, что при PATCH запросе `/api/v1/users/me/`, пользователь с ролью user может изменить свои данные, и возвращается статус 200
+E       assert 404 == 200
+E         +404
+E         -200
+
+tests\test_01_users.py:560: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Not Found: /api/v1/users/me/
+_______________ Test02CategoryAPI.test_03_category_delete_admin _______________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x04F46AF0>
+admin_client = <rest_framework.test.APIClient object at 0x0504CF50>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_category_delete_admin(self, admin_client):
+        create_categories(admin_client)
+        response = admin_client.delete('/api/v1/categories/books/')
+>       assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/categories/{slug}/` возвращаете статус 204
+E       assert 403 == 204
+E         +403
+E         -204
+
+tests\test_02_category.py:96: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Forbidden: /api/v1/categories/books/
+__________ Test02CategoryAPI.test_04_category_check_permission_admin __________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x0504C710>
+client = <django.test.client.Client object at 0x056608D0>
+admin_client = <rest_framework.test.APIClient object at 0x05660E90>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_category_check_permission_admin(self, client, admin_client):
+        categories = create_categories(admin_client)
+        data = {
+            'name': 'Музыка',
+            'slug': 'music'
+        }
+        response = client.post('/api/v1/categories/', data=data)
+>       assert response.status_code == 401, (
+            'Проверьте, что при POST запросе `/api/v1/categories/` '
+            'без токена авторизации возвращается статус 401'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/categories/` без токена авторизации возвращается статус 401
+E       assert 201 == 401
+E         +201
+E         -401
+
+tests\test_02_category.py:141: AssertionError
+_______________ Test02CategoryAPI.test_05_category_create_user ________________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x05660890>
+user_client = <rest_framework.test.APIClient object at 0x04F30890>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_05_category_create_user(self, user_client):
+        url = '/api/v1/categories/'
+        data = {
+            'name': 'Всякое разное',
+            'slug': 'something'
+        }
+        response = user_client.post(url, data=data)
+        code = 403
+>       assert response.status_code == code, (
+            f'Проверьте, что при POST запросе на `{url}`, создание категорий недоступно для '
+            f'пользователя с ролью user'
+        )
+E       AssertionError: Проверьте, что при POST запросе на `/api/v1/categories/`, создание категорий недоступно для пользователя с ролью user
+E       assert 201 == 403
+E         +201
+E         -403
+
+tests\test_02_category.py:163: AssertionError
+_____________ Test02CategoryAPI.test_06_category_create_moderator _____________
+
+self = <tests.test_02_category.Test02CategoryAPI object at 0x05244410>
+moderator_client = <rest_framework.test.APIClient object at 0x05324510>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_06_category_create_moderator(self, moderator_client):
+        url = '/api/v1/categories/'
+        data = {
+            'name': 'Всякое разное',
+            'slug': 'something'
+        }
+        response = moderator_client.post(url, data=data)
+        code = 403
+>       assert response.status_code == code, (
+            f'Проверьте, что при POST запросе на `{url}`, создание категорий недоступно для '
+            f'пользователя с ролью moderator'
+        )
+E       AssertionError: Проверьте, что при POST запросе на `/api/v1/categories/`, создание категорий недоступно для пользователя с ролью moderator
+E       assert 201 == 403
+E         +201
+E         -403
+
+tests\test_02_category.py:177: AssertionError
+____________________ Test03GenreAPI.test_03_genres_delete _____________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x05540210>
+admin_client = <rest_framework.test.APIClient object at 0x055BCDF0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_genres_delete(self, admin_client):
+        genres = create_genre(admin_client)
+        response = admin_client.delete(f'/api/v1/genres/{genres[0]["slug"]}/')
+>       assert response.status_code == 204, (
+            'Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204'
+        )
+E       AssertionError: Проверьте, что при DELETE запросе `/api/v1/genres/{slug}/` возвращаете статус 204
+E       assert 403 == 204
+E         +403
+E         -204
+
+tests\test_03_genre.py:87: AssertionError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Forbidden: /api/v1/genres/horror/
+_______________ Test03GenreAPI.test_04_genres_check_permission ________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x04F3B090>
+client = <django.test.client.Client object at 0x04F75050>
+admin_client = <rest_framework.test.APIClient object at 0x04F751D0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_genres_check_permission(self, client, admin_client):
+        genres = create_genre(admin_client)
+        data = {
+            'name': 'Боевик',
+            'slug': 'action'
+        }
+        response = client.post('/api/v1/genres/', data=data)
+>       assert response.status_code == 401, (
+            'Проверьте, что при POST запросе `/api/v1/genres/` '
+            'без токена авторизации возвращается статус 401'
+        )
+E       AssertionError: Проверьте, что при POST запросе `/api/v1/genres/` без токена авторизации возвращается статус 401
+E       assert 201 == 401
+E         +201
+E         -401
+
+tests\test_03_genre.py:129: AssertionError
+__________________ Test03GenreAPI.test_05_genre_create_user ___________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x056ABAD0>
+user_client = <rest_framework.test.APIClient object at 0x056AB370>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_05_genre_create_user(self, user_client):
+        url = '/api/v1/genres/'
+        data = {
+            'name': 'Всякое разное',
+            'slug': 'something'
+        }
+        response = user_client.post(url, data=data)
+        code = 403
+>       assert response.status_code == code, (
+            f'Проверьте, что при POST запросе на `{url}`, создание жанров недоступно для '
+            f'пользователя с ролью user'
+        )
+E       AssertionError: Проверьте, что при POST запросе на `/api/v1/genres/`, создание жанров недоступно для пользователя с ролью user
+E       assert 201 == 403
+E         +201
+E         -403
+
+tests\test_03_genre.py:151: AssertionError
+________________ Test03GenreAPI.test_06_genre_create_moderator ________________
+
+self = <tests.test_03_genre.Test03GenreAPI object at 0x055BC6D0>
+moderator_client = <rest_framework.test.APIClient object at 0x0508E0B0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_06_genre_create_moderator(self, moderator_client):
+        url = '/api/v1/genres/'
+        data = {
+            'name': 'Всякое разное',
+            'slug': 'something'
+        }
+        response = moderator_client.post(url, data=data)
+        code = 403
+>       assert response.status_code == code, (
+            f'Проверьте, что при POST запросе на `{url}`, создание жанров недоступно для '
+            f'пользователя с ролью moderator'
+        )
+E       AssertionError: Проверьте, что при POST запросе на `/api/v1/genres/`, создание жанров недоступно для пользователя с ролью moderator
+E       assert 201 == 403
+E         +201
+E         -403
+
+tests\test_03_genre.py:165: AssertionError
+_____________________ Test04TitleAPI.test_02_title_admin ______________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x0504C530>
+admin_client = <rest_framework.test.APIClient object at 0x04EC9250>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_title_admin(self, admin_client):
+        genres = create_genre(admin_client)
+        categories = create_categories(admin_client)
+        data = {}
+        response = admin_client.post('/api/v1/titles/', data=data)
+        assert response.status_code == 400, (
+            'Проверьте, что при POST запросе `/api/v1/titles/` с не правильными данными возвращает статус 400'
+        )
+        data = {'name': 'Поворот туда', 'year': 2000, 'genre': [genres[0]['slug'], genres[1]['slug']],
+                'category': categories[0]['slug'], 'description': 'Крутое пике'}
+>       response = admin_client.post('/api/v1/titles/', data=data)
+
+tests\test_04_title.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Bad Request: /api/v1/titles/
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+____________________ Test04TitleAPI.test_03_titles_detail _____________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x05687510>
+client = <django.test.client.Client object at 0x050BC690>
+admin_client = <rest_framework.test.APIClient object at 0x050BCED0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_titles_detail(self, client, admin_client):
+>       titles, categories, genres = create_titles(admin_client)
+
+tests\test_04_title.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+_______________ Test04TitleAPI.test_04_titles_check_permission ________________
+
+self = <tests.test_04_title.Test04TitleAPI object at 0x056220B0>
+client = <django.test.client.Client object at 0x04F3B8B0>
+admin_client = <rest_framework.test.APIClient object at 0x04F3BF90>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_titles_check_permission(self, client, admin_client):
+>       titles, categories, genres = create_titles(admin_client)
+
+tests\test_04_title.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+___________________ Test05ReviewAPI.test_01_review_not_auth ___________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x04FE4CB0>
+client = <django.test.client.Client object at 0x050098B0>
+admin_client = <rest_framework.test.APIClient object at 0x05009990>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_review_not_auth(self, client, admin_client):
+>       titles, _, _ = create_titles(admin_client)
+
+tests\test_05_review.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+____________________ Test05ReviewAPI.test_02_review_admin _____________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x04E4E3F0>
+admin_client = <rest_framework.test.APIClient object at 0x0503B4D0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_review_admin(self, admin_client, admin):
+>       titles, _, _ = create_titles(admin_client)
+
+tests\test_05_review.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+____________________ Test05ReviewAPI.test_03_review_detail ____________________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x05630530>
+client = <django.test.client.Client object at 0x05752090>
+admin_client = <rest_framework.test.APIClient object at 0x05752150>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_review_detail(self, client, admin_client, admin):
+>       reviews, titles, user, moderator = create_reviews(admin_client, admin)
+
+tests\test_05_review.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+______________ Test05ReviewAPI.test_04_reviews_check_permission _______________
+
+self = <tests.test_05_review.Test05ReviewAPI object at 0x0575F950>
+client = <django.test.client.Client object at 0x0562AB10>
+admin_client = <rest_framework.test.APIClient object at 0x0562A690>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_reviews_check_permission(self, client, admin_client, admin):
+>       reviews, titles, user, moderator = create_reviews(admin_client, admin)
+
+tests\test_05_review.py:319: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+__________________ Test06CommentAPI.test_01_comment_not_auth __________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05617870>
+client = <django.test.client.Client object at 0x05617750>
+admin_client = <rest_framework.test.APIClient object at 0x056A1250>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_01_comment_not_auth(self, client, admin_client, admin):
+>       reviews, titles, _, _ = create_reviews(admin_client, admin)
+
+tests\test_06_comment.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+______________________ Test06CommentAPI.test_02_comment _______________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x055886B0>
+admin_client = <rest_framework.test.APIClient object at 0x0575F910>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_02_comment(self, admin_client, admin):
+>       reviews, titles, user, moderator = create_reviews(admin_client, admin)
+
+tests\test_06_comment.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+___________________ Test06CommentAPI.test_03_review_detail ____________________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x056AB170>
+client = <django.test.client.Client object at 0x056BE2D0>
+admin_client = <rest_framework.test.APIClient object at 0x056BEDB0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_03_review_detail(self, client, admin_client, admin):
+>       comments, reviews, titles, user, moderator = create_comments(admin_client, admin)
+
+tests\test_06_comment.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:105: in create_comments
+    reviews, titles, user, moderator = create_reviews(admin_client, admin)
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+______________ Test06CommentAPI.test_04_comment_check_permission ______________
+
+self = <tests.test_06_comment.Test06CommentAPI object at 0x05599D70>
+client = <django.test.client.Client object at 0x0570BCF0>
+admin_client = <rest_framework.test.APIClient object at 0x0570B0B0>
+admin = <User: TestAdmin>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_04_comment_check_permission(self, client, admin_client, admin):
+>       comments, reviews, titles, user, moderator = create_comments(admin_client, admin)
+
+tests\test_06_comment.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\common.py:105: in create_comments
+    reviews, titles, user, moderator = create_reviews(admin_client, admin)
+tests\common.py:85: in create_reviews
+    titles, _, _ = create_titles(admin_client)
+tests\common.py:68: in create_titles
+    response = admin_client.post('/api/v1/titles/', data=data)
+..\venv\lib\site-packages\rest_framework\test.py:296: in post
+    path, data=data, format=format, content_type=content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:209: in post
+    return self.generic('POST', path, data, content_type, **extra)
+..\venv\lib\site-packages\rest_framework\test.py:234: in generic
+    method, path, data, content_type, secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\rest_framework\test.py:285: in request
+    return super().request(**kwargs)
+..\venv\lib\site-packages\rest_framework\test.py:237: in request
+    request = super().request(**kwargs)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\rest_framework\viewsets.py:125: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\mixins.py:20: in create
+    headers = self.get_success_headers(serializer.data)
+..\venv\lib\site-packages\rest_framework\serializers.py:549: in data
+    return ReturnDict(ret, serializer=self)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = {}, args = (<Title: Поворот туда>,), kwargs = {}
+
+    def __init__(self, *args, **kwargs):
+        self.serializer = kwargs.pop('serializer')
+>       super().__init__(*args, **kwargs)
+E       TypeError: 'Title' object is not iterable
+
+..\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py:18: TypeError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/titles/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\serializers.py", line 549, in data
+    return ReturnDict(ret, serializer=self)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\utils\serializer_helpers.py", line 18, in __init__
+    super().__init__(*args, **kwargs)
+TypeError: 'Title' object is not iterable
+-------------------------- Captured stderr teardown ---------------------------
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+============================== warnings summary ===============================
+..\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:943
+  e:\dev\s_10_project\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:943: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    collections.MutableMapping.register(ParseResults)
+
+..\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:3226
+  e:\dev\s_10_project\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:3226: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    elif isinstance( exprs, collections.Iterable ):
+
+tests/test_02_category.py::Test02CategoryAPI::test_01_category_not_auth
+tests/test_02_category.py::Test02CategoryAPI::test_02_category_admin
+  e:\dev\s_10_project\venv\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'reviews.models.Category'> QuerySet.
+    paginator = self.django_paginator_class(queryset, page_size)
+
+tests/test_03_genre.py::Test03GenreAPI::test_01_genre_not_auth
+tests/test_03_genre.py::Test03GenreAPI::test_02_genre
+  e:\dev\s_10_project\venv\lib\site-packages\rest_framework\pagination.py:200: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'reviews.models.Genre'> QuerySet.
+    paginator = self.django_paginator_class(queryset, page_size)
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_nodata_signup
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_user_signup
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_same_email_restricted
+FAILED tests/test_01_users.py::Test01UserAPI::test_01_users_not_authenticated
+FAILED tests/test_01_users.py::Test01UserAPI::test_02_users_username_not_authenticated
+FAILED tests/test_01_users.py::Test01UserAPI::test_03_users_me_not_authenticated
+FAILED tests/test_01_users.py::Test01UserAPI::test_04_users_get_admin - Asser...
+FAILED tests/test_01_users.py::Test01UserAPI::test_04_02_users_get_search - A...
+FAILED tests/test_01_users.py::Test01UserAPI::test_04_01_users_get_admin_only
+FAILED tests/test_01_users.py::Test01UserAPI::test_05_01_users_post_admin - A...
+FAILED tests/test_01_users.py::Test01UserAPI::test_05_02_users_post_user_superuser
+FAILED tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_06_users_username_get_not_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_07_01_users_username_patch_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_07_02_users_username_patch_moderator
+FAILED tests/test_01_users.py::Test01UserAPI::test_07_03_users_username_patch_user
+FAILED tests/test_01_users.py::Test01UserAPI::test_07_05_users_username_put_user_restricted
+FAILED tests/test_01_users.py::Test01UserAPI::test_08_01_users_username_delete_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_08_02_users_username_delete_moderator
+FAILED tests/test_01_users.py::Test01UserAPI::test_08_03_users_username_delete_user
+FAILED tests/test_01_users.py::Test01UserAPI::test_08_04_users_username_delete_superuser
+FAILED tests/test_01_users.py::Test01UserAPI::test_09_users_check_permissions
+FAILED tests/test_01_users.py::Test01UserAPI::test_10_users_me_get_admin - us...
+FAILED tests/test_01_users.py::Test01UserAPI::test_11_01_users_me_patch_admin
+FAILED tests/test_01_users.py::Test01UserAPI::test_11_02_users_me_patch_user
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_03_category_delete_admin
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_04_category_check_permission_admin
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_05_category_create_user
+FAILED tests/test_02_category.py::Test02CategoryAPI::test_06_category_create_moderator
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_03_genres_delete - Assert...
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_04_genres_check_permission
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_05_genre_create_user - As...
+FAILED tests/test_03_genre.py::Test03GenreAPI::test_06_genre_create_moderator
+FAILED tests/test_04_title.py::Test04TitleAPI::test_02_title_admin - TypeErro...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_03_titles_detail - TypeEr...
+FAILED tests/test_04_title.py::Test04TitleAPI::test_04_titles_check_permission
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_01_review_not_auth - Ty...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_02_review_admin - TypeE...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_03_review_detail - Type...
+FAILED tests/test_05_review.py::Test05ReviewAPI::test_04_reviews_check_permission
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_01_comment_not_auth
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_02_comment - TypeErro...
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_03_review_detail - Ty...
+FAILED tests/test_06_comment.py::Test06CommentAPI::test_04_comment_check_permission
+================== 47 failed, 6 passed, 6 warnings in 19.27s ==================

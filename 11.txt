@@ -1,0 +1,184 @@
+============================= test session starts =============================
+platform win32 -- Python 3.7.0, pytest-6.2.4, py-1.11.0, pluggy-0.13.1 -- e:\dev\s_10_project\venv\scripts\python.exe
+django: settings: api_yamdb.settings (from ini)
+rootdir: E:\Dev\s_10_project\api_yamdb, configfile: pytest.ini, testpaths: tests/
+plugins: django-4.4.0, pythonpath-0.7.3
+collecting ... collected 53 items
+
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_nodata_signup PASSED [  1%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_invalid_data_signup PASSED [  3%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_user_signup PASSED [  5%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user FAILED [  7%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data FAILED [  9%]
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_registration_me_username_restricted 
+
+================================== FAILURES ===================================
+_________ Test00UserRegistration.test_00_valid_data_admin_create_user _________
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x054FFC10>
+admin_client = <rest_framework.test.APIClient object at 0x055D1C10>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_valid_data_admin_create_user(self, admin_client):
+    
+        valid_email = 'valid@yamdb.fake'
+        valid_username = 'valid_username'
+        outbox_before_count = len(mail.outbox)
+    
+        valid_data = {
+            'email': valid_email,
+            'username': valid_username
+        }
+        request_type = 'POST'
+        response = admin_client.post(self.url_admin_create_user, data=valid_data)
+        outbox_after = mail.outbox
+    
+        assert response.status_code != 404, (
+            f'—траница `{self.url_admin_create_user}` не найдена, проверьте этот адрес в *urls.py*'
+        )
+    
+        code = 201
+>       assert response.status_code == code, (
+            f'ѕроверьте, что при {request_type} запросе `{self.url_admin_create_user}` с валидными данными '
+            f'от имени администратора, создаетс€ пользователь и возвращаетс€ статус {code}'
+        )
+E       AssertionError: ѕроверьте, что при POST запросе `/api/v1/users/` с валидными данными от имени администратора, создаетс€ пользователь и возвращаетс€ статус 201
+E       assert 403 == 201
+E         +403
+E         -201
+
+tests\test_00_user_registration.py:142: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{'token_type': 'access', 'exp': 1663021051, 'iat': 1663020751, 'jti': '8e2fdf19a811401bacce9717658f9835', 'user_id': 2}
+------------------------------ Captured log call ------------------------------
+WARNING  django.request:log.py:228 Forbidden: /api/v1/users/
+________ Test00UserRegistration.test_00_obtain_jwt_token_invalid_data _________
+
+self = <QueryDict: {}>, key = 'username'
+
+    def __getitem__(self, key):
+        """
+        Return the last data value for this key, or [] if it's an empty list;
+        raise KeyError if not found.
+        """
+        try:
+>           list_ = super().__getitem__(key)
+E           KeyError: 'username'
+
+..\venv\lib\site-packages\django\utils\datastructures.py:78: KeyError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.test_00_user_registration.Test00UserRegistration object at 0x055BBEB0>
+client = <django.test.client.Client object at 0x054FF3F0>
+
+    @pytest.mark.django_db(transaction=True)
+    def test_00_obtain_jwt_token_invalid_data(self, client):
+    
+        request_type = 'POST'
+>       response = client.post(self.url_token)
+
+tests\test_00_user_registration.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\venv\lib\site-packages\django\test\client.py:543: in post
+    response = super().post(path, data=data, content_type=content_type, secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:357: in post
+    secure=secure, **extra)
+..\venv\lib\site-packages\django\test\client.py:422: in generic
+    return self.request(**r)
+..\venv\lib\site-packages\django\test\client.py:503: in request
+    raise exc_value
+..\venv\lib\site-packages\django\core\handlers\exception.py:34: in inner
+    response = get_response(request)
+..\venv\lib\site-packages\django\core\handlers\base.py:115: in _get_response
+    response = self.process_exception_by_middleware(e, request)
+..\venv\lib\site-packages\django\core\handlers\base.py:113: in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+..\venv\lib\site-packages\django\views\decorators\csrf.py:54: in wrapped_view
+    return view_func(*args, **kwargs)
+..\venv\lib\site-packages\django\views\generic\base.py:71: in view
+    return self.dispatch(request, *args, **kwargs)
+..\venv\lib\site-packages\rest_framework\views.py:509: in dispatch
+    response = self.handle_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:469: in handle_exception
+    self.raise_uncaught_exception(exc)
+..\venv\lib\site-packages\rest_framework\views.py:480: in raise_uncaught_exception
+    raise exc
+..\venv\lib\site-packages\rest_framework\views.py:506: in dispatch
+    response = handler(request, *args, **kwargs)
+api_yamdb\api\views.py:47: in post
+    user = get_object_or_404(User, username=request.data['username'])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <QueryDict: {}>, key = 'username'
+
+    def __getitem__(self, key):
+        """
+        Return the last data value for this key, or [] if it's an empty list;
+        raise KeyError if not found.
+        """
+        try:
+            list_ = super().__getitem__(key)
+        except KeyError:
+>           raise MultiValueDictKeyError(key)
+E           django.utils.datastructures.MultiValueDictKeyError: 'username'
+
+..\venv\lib\site-packages\django\utils\datastructures.py:80: MultiValueDictKeyError
+------------------------------ Captured log call ------------------------------
+ERROR    django.request:log.py:228 Internal Server Error: /api/v1/auth/token/
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'username'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "e:\dev\s_10_project\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\Dev\s_10_project\api_yamdb\api_yamdb\api\views.py", line 47, in post
+    user = get_object_or_404(User, username=request.data['username'])
+  File "e:\dev\s_10_project\venv\lib\site-packages\django\utils\datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'username'
+============================== warnings summary ===============================
+..\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:943
+  e:\dev\s_10_project\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:943: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    collections.MutableMapping.register(ParseResults)
+
+..\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:3226
+  e:\dev\s_10_project\venv\lib\site-packages\pkg_resources\_vendor\pyparsing.py:3226: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+    elif isinstance( exprs, collections.Iterable ):
+
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user
+  e:\dev\s_10_project\venv\lib\site-packages\jwt\api_jwt.py:81: DeprecationWarning: It is strongly recommended that you pass in a value for the "algorithms" argument when calling decode(). This argument will be mandatory in a future version.
+    DeprecationWarning
+
+tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user
+  e:\dev\s_10_project\venv\lib\site-packages\jwt\api_jws.py:145: DeprecationWarning: It is strongly recommended that you pass in a value for the "algorithms" argument when calling decode(). This argument will be mandatory in a future version.
+    DeprecationWarning
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_valid_data_admin_create_user
+FAILED tests/test_00_user_registration.py::Test00UserRegistration::test_00_obtain_jwt_token_invalid_data
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+e:\dev\s_10_project\venv\lib\site-packages\django\dispatch\dispatcher.py:113: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+=================== 2 failed, 3 passed, 4 warnings in 6.71s ===================
