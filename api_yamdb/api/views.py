@@ -60,7 +60,7 @@ def register_users(request):
             "email": user.email
         }
         return Response(data, status=status.HTTP_200_OK)
-    except:
+    except Exception:
         serializer = RegistrationSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
